@@ -1,20 +1,15 @@
 import './App.css';
-import React from 'react';
-
-
-export function SecretComponent(){
-  return <h1>Secret Component</h1>
-}
-
-export function GeneralComponent(){
-  return <h1>General Component</h1>
-}
+import React, { useState } from 'react';
 
 function App(props) {
- return ( <div>
-    {props.authorized ? <SecretComponent /> : <GeneralComponent />}
+  const [name, setName]=useState('Rasel')
 
-  </div>
+
+
+ return ( <div>
+              <h1>Hello {name}</h1>
+              <button onClick={()=>setName('Zeras')}>ClickMe</button>
+          </div>
  );
 }
 
