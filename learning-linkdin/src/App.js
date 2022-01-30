@@ -1,7 +1,9 @@
 import './App.css';
-import React, { useReducer, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App({login}) {
+
+
   const [data, setData]=useState(null)
   const[loading, setLoading]=useState(false)
   const[error, setError]=useState(null)
@@ -26,6 +28,7 @@ function App({login}) {
     return (<div>
               <h1>{data.name}</h1>
               <img alt={data.login} src={data.avatar_url} />
+              <h1>Hello React Testing Library</h1>
           </div>
      ) 
 }
