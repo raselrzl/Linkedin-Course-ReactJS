@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useReducer } from 'react';
+import React, { useReducer, useState, useEffect } from 'react';
 
 function App() {
   const [checked, toggle]=useReducer(
@@ -14,6 +14,7 @@ function App() {
                 value={checked}
                 onChange={toggle}
               />
+              <p>{checked? "checked":'not Checked'}</p>
           </div>
  )
 }
