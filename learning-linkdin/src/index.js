@@ -5,12 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
-
+const login='raselrzl'
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App login={login}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
