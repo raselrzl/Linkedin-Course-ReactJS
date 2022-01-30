@@ -1,36 +1,22 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Routes, Route} from 'react-router-dom'
+import {Home, About, Events, Contact, Error} from './pages'
 
-function App({login}) {
-
-
-  const [data, setData]=useState(null)
-  const[loading, setLoading]=useState(false)
-  const[error, setError]=useState(null)
-
-
-
-  useEffect(()=>{
-    fetch(`https://api.github.com/users/${ login }`)
-    .then((res)=>res.json())
-    .then(setData)
-    .then(()=>setLoading(false))
-    .catch(setError)
-  },[login]);
-
-  if(loading) return <h1>Loading...</h1>;
-  if(error)
-    return <pre>{JSON.stringify(error, null, 2)}</pre>
-
-  if(!data) return null;
-
+function App() {
   
-    return (<div>
-              <h1>{data.name}</h1>
-              <img alt={data.login} src={data.avatar_url} />
-              <h1>Hello React Testing Library</h1>
-          </div>
-     ) 
+    return ( 
+      <div>
+      <Routes>
+                <Route exact path="/" element={<Home /> }/>
+                <Route exact path="/about" element={<About /> }/>
+                <Route exact path="/events" element={ <Events /> }/>
+                <Route exact path="/contact" element={<Contact /> }/>
+                <Route exact path="*" element={<Error /> }/>
+      </Routes>
+      </div>         
+    )     
+     
 }
 
 export default App;

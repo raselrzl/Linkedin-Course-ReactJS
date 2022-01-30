@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router} from 'react-router-dom'
 
 
-const login='raselrzl'
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App login={login}/>
-  </React.StrictMode>,
+  
+  <Router>
+      <App />
+  </Router>,
+    
+  
   document.getElementById('root')
 );
 
