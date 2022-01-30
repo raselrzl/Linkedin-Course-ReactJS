@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, useLocation} from 'react-router-dom'
+import {Link, useLocation, Outlet} from 'react-router-dom'
 export function Home(){
     return(
         <div>
@@ -19,9 +19,27 @@ export function About(){
     return(
         <div>
             <h1>[About page]</h1>
+            <Outlet />
         </div>
     )
 }
+
+export function Services(){
+    return(
+        <div>
+            <h1>[Service page]</h1>
+        </div>
+    )
+}
+export function History(){
+    return(
+        <div>
+            <h1>[History page]</h1>
+        </div>
+    )
+}
+
+
 export function Events(){
     return(
         <div>
